@@ -1,21 +1,16 @@
-<!DOCTYPE html>
+@include('itemhead')
 
-<html>
+<div id="itemColumn" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+	@include('currentItem')
+	@include('itemlist')
+</div>
 
-<head>
-    <title> League Report </title>
-</head>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+	@include('championList')
+</div>
 
-<body>
-
-<?php
-foreach ($res['data'] as $obj) {
-	
-	try { $obj = $obj['name']; ?> {{ $obj }} <br> <?php }
-	catch (Exception $e) { }
-}
-
-?>
+<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+</div>
 
 </body>
 

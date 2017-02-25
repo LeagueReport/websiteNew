@@ -15,3 +15,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/item', 'ItemController@index');
 
+Route::get('/items', 'ItemController@items');
+Route::get('/item/{id}', 'ItemController@item');
+
+Route::get('/champions', 'ItemController@champions');
