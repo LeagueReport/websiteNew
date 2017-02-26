@@ -19,3 +19,4 @@ Route::get('/items', 'ItemController@items');
 Route::get('/item/{id}', 'ItemController@item');
 
 Route::get('/champions', 'ItemController@champions');
+Route::get('/champion/{id}', 'ItemController@champion');

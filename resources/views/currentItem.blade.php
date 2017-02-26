@@ -9,4 +9,6 @@
 		<strong> {[ key ]} </strong> {[ value ]} <br>
 	</div>
 
+	<button data-ng-click="selectItem()"> Select Item </button>
+
 </div>

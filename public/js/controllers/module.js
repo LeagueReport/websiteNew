@@ -8,12 +8,16 @@ myApp.controller('ItemController', function($scope, $http) {
     // Variables 
     $scope.items;
     $scope.itemSearch = '';
+    $scope.currentItem;
 
     $scope.champions;
     $scope.championSearch = '';
+    $scope.currentChampion;
 
-    $scope.currentItem;
-    $scope.itemSet; 
+    $scope.itemSet = {
+    	champion : '',
+    	items : [],
+    }; 
     $scope.itemSetStats; 
 
     // Functions
@@ -39,6 +43,11 @@ myApp.controller('ItemController', function($scope, $http) {
   		});
     }
 
+    $scope.selectItem = function () {
+
+    	$scope.itemSet.items.push($scope.currentItem);
+    }
+
     $scope.getChampions = function () {
     	$http({
   			method: 'GET',
@@ -48,6 +57,22 @@ myApp.controller('ItemController', function($scope, $http) {
  		 }, function errorCallback(response) {
     		console.log("Something went wrong!");
   		});
+    }
+
+    $scope.updateCurrentChampion = function (id) {
+    	$http({
+  			method: 'GET',
+  			url: '/champion/'+id
+		}).then(function successCallback(response) {
+			$scope.currentChampion = response.data;
+ 		 }, function errorCallback(response) {
+    		console.log("Something went wrong!");
+  		});
+    }
+
+    $scope.selectChampion = function () {
+
+    	$scope.itemSet.champion = $scope.currentChampion;
     }
 
     $scope.getItems();
