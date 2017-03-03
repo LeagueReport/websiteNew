@@ -43,4 +43,15 @@ class ItemController extends Controller
         $res = $res->getBody();
         return response($res);
     }
+
+    public function itemsetSave () 
+    {
+        
+
+        // DUMMY LINES
+        $res = $client->request('GET', 'https://global.api.pvp.net/api/lol/static-data/na/v1.2/champion/'. $id .'?champData=all&api_key=RGAPI-22d91634-8797-414b-b49b-1b6e836e2c01');
+        $res = $res->getBody();
+        return response($res);
+        // DUMMY LINES
+    }
 }

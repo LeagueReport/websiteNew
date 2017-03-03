@@ -111,7 +111,6 @@ myApp.controller('ItemController', function($scope, $http) {
  		 }, function errorCallback(response) {
     		console.log("Something went wrong!");
   		});
-
     }
 
     $scope.selectChampion = function () {
@@ -130,6 +129,16 @@ myApp.controller('ItemController', function($scope, $http) {
         $scope.currentChampion.mr = parseFloat($scope.currentChampion.json.stats.spellblock) + (($scope.level - 1) * parseFloat($scope.currentChampion.json.stats.spellblockperlevel));    
         $scope.currentChampion.movespeed = parseFloat($scope.currentChampion.json.stats.movespeed); 
         $scope.currentChampion.range = parseFloat($scope.currentChampion.json.stats.attackrange);
+    }
+
+    $scope.saveItemSet = funciton () {
+        $http({
+            method: 'GET',
+            url: '/itemset/save'
+        }).then(function successCallback(response) {
+         }, function errorCallback(response) {
+            console.log("Something went wrong!");
+        });
     }
 
     $scope.getItems();
