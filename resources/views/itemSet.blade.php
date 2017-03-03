@@ -3,7 +3,8 @@
 	<strong> Champion </strong> {[ itemSet.champion.name ]} <br>
 	<strong> Items </strong>
 	<div data-ng-repeat="item in itemSet.items"> 
-		{[ item.name ]} <br>
+		{[ item.name ]} <br> 
+		<button data-ng-click="removeItem(item)"> Remove </button>
 	</div>
 
 </div>

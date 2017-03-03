@@ -3,12 +3,14 @@ html, body {
 	width: 100%;
 }
 
-#itemColumn {
+#listColumn {
 	height: 100%;
 }
 
-#items {
-	height: 100%;
+#list {
+	height: calc(50% - 30px);
+	margin-top: 15px;
+	margin-bottom: 15px;
 	width: 100%;
 	overflow: auto;
 	background-color: aqua;
