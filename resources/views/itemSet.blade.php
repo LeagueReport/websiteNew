@@ -7,6 +7,6 @@
 		<button data-ng-click="removeItem(item)"> Remove </button>
 	</div>
 
-	<button data-ng-click="saveItemSet()"> Save Item Set </button>
+	<!-- <button data-ng-click="saveItemSet()"> Save Item Set </button> -->
 
 </div>

@@ -131,7 +131,7 @@ myApp.controller('ItemController', function($scope, $http) {
         $scope.currentChampion.range = parseFloat($scope.currentChampion.json.stats.attackrange);
     }
 
-    $scope.saveItemSet = funciton () {
+    $scope.saveItemSet = function () {
         $http({
             method: 'GET',
             url: '/itemset/save'
