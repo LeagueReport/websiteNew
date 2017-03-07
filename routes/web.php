@@ -17,7 +17,7 @@ Route::get('/item', 'ItemController@index');
 
 Route::get('/items', 'ItemController@items');
 Route::get('/item/{id}', 'ItemController@item');
-Route::get('/itemset/save', 'ItemContoller@itemsetSave');
+/* Route::get('/itemset/save', 'ItemContoller@itemsetSave'); */
 
 Route::get('/champions', 'ItemController@champions');
 Route::get('/champion/{id}', 'ItemController@champion');
