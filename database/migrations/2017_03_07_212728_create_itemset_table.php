@@ -14,7 +14,7 @@ class CreateItemsetTable extends Migration
     public function up()
     {
         Schema::create('ItemSet', function (Blueprint $table) {
-           $table->increments('userID');
+           $table->increments('userID')->unique();
            $table->string('itemSetID');
            $table->string('championID');
            $table->string('item1ID');
