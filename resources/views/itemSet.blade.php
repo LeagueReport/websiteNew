@@ -3,9 +3,13 @@
 	<strong> Champion </strong> {[ itemSet.champion.json.name ]} <br>
 	<strong> Items </strong>
 	<div data-ng-repeat="item in itemSet.items"> 
+
+		<!--<?php 
+		?>
+
+		-->
 		{[ item.name ]} <br> 
 		<button data-ng-click="removeItem(item)"> Remove </button>
-<<<<<<< HEAD
 	</div> <br>
 
 	<strong style="text-decoration: underline"> Cumulative Stats </strong> 
@@ -33,8 +37,9 @@
 
 	<select data-ng-model="itemSetLevel" data-ng-options="x for x in levels" data-ng-change="updateItemSetStats()">
 	</select>
-=======
 	</div>
+
+	<!--
 	//$0 = "champion";
 	//$1 = "test1";
 	//$2 = "test2";
@@ -42,14 +47,27 @@
 	//$4 = "test4";
 	//$5 = "test5";
 	//$6 = "test6";
->>>>>>> 2d51f2e6a48d57e9235bf7d5650f88c199e7667c
+>>>>>>> 2d51f2e6a48d57e9235bf7d5650f88c199e7667c -->
 
+	<!--<?php 
+
+		//foreach($itemSet as $item) {
+			//echo $item;
+		//}
+
+
+	?>
+
+	-->
+<button data-ng-click="saveItemSet()"> Save Item Set button</button>
 	
-	<button data-ng-click="saveItemSet($0, $1, $2, $3, $4, $5, $6)"> Save Item Set </button>
+	
 
 	<!--<form method="GET" action="/itemset/save">
         
-        <input type="submit" value="Save Itemset">
+        <input type="submit" value="Save Itemset form">
+
+        
     </form>-->
 
 </div>

@@ -3,9 +3,9 @@ var myApp = angular.module('myApp', [], function($interpolateProvider) {
         $interpolateProvider.endSymbol(']}');
     });
 
+
 myApp.controller('ItemController', function($scope, $http) {
     
-    console.log("Hello me");
 
     // Variables 
     $scope.items;
@@ -13,6 +13,7 @@ myApp.controller('ItemController', function($scope, $http) {
     $scope.currentItem = {
     	json : ''
     }
+
 
     $scope.champions;
     $scope.championSearch = '';
@@ -53,6 +54,10 @@ myApp.controller('ItemController', function($scope, $http) {
     		range : 0,
     		as : 0
     	}
+    }
+
+    $scope.itemSetIDs = {
+        IDs : []
     }
 
     // Functions
@@ -159,9 +164,52 @@ myApp.controller('ItemController', function($scope, $http) {
     }
 
     $scope.saveItemSet = function () {
+        
+        var champion = "NA"
+        var item1 = "NA";
+        var item2 = "NA";
+        var item3 = "NA";
+        var item4 = "NA";
+        var item5 = "NA";
+        var item6 = "NA";
+        var itemNames = new Array();
+        for (var i = 0; i < $scope.itemSet.items.length; i++) {
+            //window.alert($scope.itemSet.items[i].name);
+            //itemNames.push($scope.itemSet.items[i].name);
+            if (i == 0) {
+                item1 = $scope.itemSet.items[i].id;
+            }
+            if (i == 1) {
+                item2 = $scope.itemSet.items[i].id;
+            }
+            if (i == 2) {
+                item3 = $scope.itemSet.items[i].id;
+            }
+            if (i == 3) {
+                item4 = $scope.itemSet.items[i].id;
+            }
+            if (i == 4) {
+                item5 = $scope.itemSet.items[i].id;
+            }
+            if (i == 5) {
+                item6 = $scope.itemSet.items[i].id;
+            }
+
+        }
+
+        champion = ($scope.itemSet.champion.json.id);
+
+        //window.alert(item1);
+        //window.alert(item2);
+        //window.alert(item3);
+        //window.alert(item4);
+        //window.alert(item5);
+        //window.alert(item6);
+        //window.alert($scope.itemSet.champion.json.id);
+
         $http({
             method: 'GET',
-            url: '/itemset/save'
+            url: '/itemset/save/'+champion+'/'+item1+'/'+item2+'/'+item3+'/'+item4+'/'+item5+'/'+item6
         }).then(function successCallback(response) {
          }, function errorCallback(response) {
             console.log("Something went wrong!");
