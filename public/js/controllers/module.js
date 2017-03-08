@@ -197,7 +197,10 @@ myApp.controller('ItemController', function($scope, $http) {
 
         }
 
-        champion = ($scope.itemSet.champion.json.id);
+        if ($scope.itemSet.champion.json != '') {
+            champion = ($scope.itemSet.champion.json.id);
+        }
+
 
         //window.alert(item1);
         //window.alert(item2);
