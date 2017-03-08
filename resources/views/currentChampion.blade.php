@@ -1,6 +1,6 @@
 <div id="currentItem" class="col-xs-12 col-sm-4 col-md-4 col-lg-4" data-ng-show="!(isItem)"> 
 
-	<img src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{[currentChampion.json.name]}.png">
+	<img src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{[currentChampion.json.key]}.png">
 
 	<strong> Name </strong> {[ currentChampion.json.name]} <br>
  	<strong style="text-decoration: underline"> Tags </strong> 

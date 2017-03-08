@@ -5,6 +5,8 @@ var myApp = angular.module('myApp', [], function($interpolateProvider) {
 
 myApp.controller('ItemController', function($scope, $http) {
     
+    console.log("Hello me");
+
     // Variables 
     $scope.items;
     $scope.itemSearch = '';
@@ -29,12 +31,15 @@ myApp.controller('ItemController', function($scope, $http) {
     }
 
     $scope.level = 1;
+    $scope.itemSetLevel = 1; 
     $scope.levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
     $scope.isItem = false; 
 
     $scope.itemSet = {
-    	champion : '',
+    	champion : {
+            json : ''
+        },
     	items : [],
     	stats : {
     		ad : 0,
@@ -48,7 +53,7 @@ myApp.controller('ItemController', function($scope, $http) {
     		range : 0,
     		as : 0
     	}
-    }; 
+    }
 
     // Functions
     $scope.getItems = function () {
@@ -82,10 +87,12 @@ myApp.controller('ItemController', function($scope, $http) {
     	else {
     		alert("Maximum amount of items in set");
     	}
+        $scope.updateItemSetStats();
     }
 
     $scope.removeItem = function(item) {
     	$scope.itemSet.items.splice($scope.itemSet.items.indexOf(item),1);
+        $scope.updateItemSetStats();
     }
 
     $scope.getChampions = function () {
@@ -115,7 +122,8 @@ myApp.controller('ItemController', function($scope, $http) {
 
     $scope.selectChampion = function () {
 
-    	$scope.itemSet.champion = $scope.currentChampion.json;
+    	$scope.itemSet.champion.json = $scope.currentChampion.json;
+        $scope.updateItemSetStats();
     }
 
     $scope.updateStatsByLevel = function () {
@@ -129,6 +137,25 @@ myApp.controller('ItemController', function($scope, $http) {
         $scope.currentChampion.mr = parseFloat($scope.currentChampion.json.stats.spellblock) + (($scope.level - 1) * parseFloat($scope.currentChampion.json.stats.spellblockperlevel));    
         $scope.currentChampion.movespeed = parseFloat($scope.currentChampion.json.stats.movespeed); 
         $scope.currentChampion.range = parseFloat($scope.currentChampion.json.stats.attackrange);
+    }
+
+    $scope.updateItemSetStats = function () {
+
+        if ($scope.itemSet.champion.json != '') {
+            $scope.itemSet.stats.ad = parseFloat($scope.itemSet.champion.json.stats.attackdamage) + (($scope.itemSetLevel - 1) * parseFloat($scope.itemSet.champion.json.stats.attackdamageperlevel));
+            $scope.itemSet.stats.hp = parseFloat($scope.itemSet.champion.json.stats.hp) + (($scope.itemSetLevel - 1) * parseFloat($scope.itemSet.champion.json.stats.hpperlevel));
+            $scope.itemSet.stats.hpRegen = parseFloat($scope.itemSet.champion.json.stats.hpregen) + (($scope.itemSetLevel - 1) * parseFloat($scope.itemSet.champion.json.stats.hpregenperlevel));
+            $scope.itemSet.stats.mana = parseFloat($scope.itemSet.champion.json.stats.mp) + (($scope.itemSetLevel - 1) * parseFloat($scope.itemSet.champion.json.stats.mpperlevel));
+            $scope.itemSet.stats.armor = parseFloat($scope.itemSet.champion.json.stats.armor) + (($scope.itemSetLevel - 1) * parseFloat($scope.itemSet.champion.json.stats.armorperlevel));    
+            $scope.itemSet.stats.manaRegen = parseFloat($scope.itemSet.champion.json.stats.mpregen) + (($scope.itemSetLevel- 1) * parseFloat($scope.itemSet.champion.json.stats.mpregenperlevel));       
+            $scope.itemSet.stats.mr = parseFloat($scope.itemSet.champion.json.stats.spellblock) + (($scope.itemSetLevel - 1) * parseFloat($scope.itemSet.champion.json.stats.spellblockperlevel));    
+            $scope.itemSet.stats.movespeed = parseFloat($scope.itemSet.champion.json.stats.movespeed); 
+            $scope.itemSet.stats.range = parseFloat($scope.itemSet.champion.json.stats.attackrange);
+        }
+
+        for (var i = 0; i < $scope.itemSet.items.length; i++) {
+            console.log($scope.itemSet.items[i].name);
+        }
     }
 
     $scope.saveItemSet = function () {
