@@ -46,19 +46,9 @@ class ItemController extends Controller
     }
 
 
-    public function saveItemSet($champion, $item1, $item2, $item3, $item4, $item5, $item6)//$champName, $item1, $item2, $item3, $item4, $item5, $item6) 
+    public function saveItemSet($champion, $item1, $item2, $item3, $item4, $item5, $item6)
     {
-        //$itemSetID;
-        //$championID;
-        //$item1 = $save[0];
-
-        //$item1 = "69";
-        //$item2;
-        //$item3;
-        //$item4;
-        //$item5;
-        //$item6;
-
+    
         DB::table('ItemSet')->insert(
                 ['itemSetID' => "1",
                  'championID' => $champion,
@@ -70,15 +60,6 @@ class ItemController extends Controller
                        'item6ID' => $item6]
 
             );
-
-
-
-        /*DB::table('ItemSet')->insert(
-                ['itemSetID' => "1", 'championID' => $champName, 'item1ID' => $item1, 'item2ID' => $item2, 'item3ID' => $item3, 'item4ID' => $item4, 'item5ID' => $item5, 'item6ID' => $item6]
-
-            );*/
-            //$t = "success";
-            //return response($t);
 
     }
     

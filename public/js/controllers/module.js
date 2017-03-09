@@ -201,15 +201,6 @@ myApp.controller('ItemController', function($scope, $http) {
             champion = ($scope.itemSet.champion.json.id);
         }
 
-
-        //window.alert(item1);
-        //window.alert(item2);
-        //window.alert(item3);
-        //window.alert(item4);
-        //window.alert(item5);
-        //window.alert(item6);
-        //window.alert($scope.itemSet.champion.json.id);
-
         $http({
             method: 'GET',
             url: '/itemset/save/'+champion+'/'+item1+'/'+item2+'/'+item3+'/'+item4+'/'+item5+'/'+item6
