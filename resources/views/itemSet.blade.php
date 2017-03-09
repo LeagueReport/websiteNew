@@ -37,7 +37,7 @@
 	</div>
 
 
-	<button data-ng-click="saveItemSet()"> Save Item Set button</button>
+	<button data-ng-click="saveItemSet()"> Save Item Set</button>
 	
 
 
