@@ -174,8 +174,7 @@ myApp.controller('ItemController', function($scope, $http) {
         var item6 = "NA";
         var itemNames = new Array();
         for (var i = 0; i < $scope.itemSet.items.length; i++) {
-            //window.alert($scope.itemSet.items[i].name);
-            //itemNames.push($scope.itemSet.items[i].name);
+            
             if (i == 0) {
                 item1 = $scope.itemSet.items[i].id;
             }

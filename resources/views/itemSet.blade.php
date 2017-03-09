@@ -4,10 +4,7 @@
 	<strong> Items </strong>
 	<div data-ng-repeat="item in itemSet.items"> 
 
-		<!--<?php 
-		?>
 
-		-->
 		{[ item.name ]} <br> 
 		<button data-ng-click="removeItem(item)"> Remove </button>
 	</div> <br>
@@ -39,35 +36,9 @@
 	</select>
 	</div>
 
-	<!--
-	//$0 = "champion";
-	//$1 = "test1";
-	//$2 = "test2";
-	//$3 = "test3";
-	//$4 = "test4";
-	//$5 = "test5";
-	//$6 = "test6";
->>>>>>> 2d51f2e6a48d57e9235bf7d5650f88c199e7667c -->
 
-	<!--<?php 
-
-		//foreach($itemSet as $item) {
-			//echo $item;
-		//}
-
-
-	?>
-
-	-->
-<button data-ng-click="saveItemSet()"> Save Item Set button</button>
-	
+	<button data-ng-click="saveItemSet()"> Save Item Set button</button>
 	
 
-	<!--<form method="GET" action="/itemset/save">
-        
-        <input type="submit" value="Save Itemset form">
-
-        
-    </form>-->
 
 </div>
