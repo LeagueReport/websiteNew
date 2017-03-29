@@ -3,6 +3,8 @@
 	<strong> Champion </strong> {[ itemSet.champion.json.name ]} <br>
 	<strong> Items </strong>
 	<div data-ng-repeat="item in itemSet.items"> 
+
+
 		{[ item.name ]} <br> 
 		<button data-ng-click="removeItem(item)"> Remove </button>
 	</div> <br>
@@ -40,12 +42,9 @@
 	</select>
 	</div>
 
-	
-	<button data-ng-click="saveItemSet($0, $1, $2, $3, $4, $5, $6)"> Save Item Set </button>
 
-	<!--<form method="GET" action="/itemset/save">
-        
-        <input type="submit" value="Save Itemset">
-    </form>-->
+	<button data-ng-click="saveItemSet()"> Save Item Set</button>
+	
+
 
 </div>
