@@ -51,7 +51,10 @@ myApp.controller('ItemController', function($scope, $http) {
     		mr : 0, 
     		movespeed : 0,
     		range : 0,
-    		as : 0
+    		as : 0,
+            ap : 0,
+            crit : 0,
+            ls : 0
     	}
     }
 
@@ -137,6 +140,7 @@ myApp.controller('ItemController', function($scope, $http) {
         $scope.currentChampion.mr = parseFloat($scope.currentChampion.json.stats.spellblock) + (($scope.level - 1) * parseFloat($scope.currentChampion.json.stats.spellblockperlevel));    
         $scope.currentChampion.movespeed = parseFloat($scope.currentChampion.json.stats.movespeed); 
         $scope.currentChampion.range = parseFloat($scope.currentChampion.json.stats.attackrange);
+        $scope.currentChampion.as = (.625 / (1 + parseFloat($scope.currentChampion.json.stats.attackspeedoffset))) * (1 + (($scope.level - 1) * parseFloat($scope.currentChampion.json.stats.attackspeedperlevel) / 100));
     }
 
     $scope.updateItemSetStats = function () {
@@ -151,11 +155,71 @@ myApp.controller('ItemController', function($scope, $http) {
             $scope.itemSet.stats.mr = parseFloat($scope.itemSet.champion.json.stats.spellblock) + (($scope.itemSetLevel - 1) * parseFloat($scope.itemSet.champion.json.stats.spellblockperlevel));    
             $scope.itemSet.stats.movespeed = parseFloat($scope.itemSet.champion.json.stats.movespeed); 
             $scope.itemSet.stats.range = parseFloat($scope.itemSet.champion.json.stats.attackrange);
+            $scope.itemSet.stats.as = (.625 / (1 + parseFloat($scope.itemSet.champion.json.stats.attackspeedoffset))) * (1 + (($scope.itemSetLevel - 1) * parseFloat($scope.itemSet.champion.json.stats.attackspeedperlevel) / 100));
+            $scope.itemSet.stats.ap = 0;
+            $scope.itemSet.stats.crit = 0;
+            $scope.itemSet.stats.ls = 0; 
+        }
+        else {
+            $scope.itemSet.stats.ad = 0;
+            $scope.itemSet.stats.hp = 0;
+            $scope.itemSet.stats.hpRegen = 0;
+            $scope.itemSet.stats.mana = 0;
+            $scope.itemSet.stats.armor = 0;   
+            $scope.itemSet.stats.manaRegen = 0;       
+            $scope.itemSet.stats.mr = 0;  
+            $scope.itemSet.stats.movespeed = 0;
+            $scope.itemSet.stats.range = 0;
+            $scope.itemSet.stats.as = 0;
+            $scope.itemSet.stats.ap = 0;
+            $scope.itemSet.stats.crit = 0;
+            $scope.itemSet.stats.ls = 0; 
         }
 
-        for (var i = 0; i < $scope.itemSet.items.length; i++) {
-            console.log($scope.itemSet.items[i].name);
+        $scope.movespeedPer = 0; 
+        $scope.asPer = 0;
+
+        for (var i = 0; i < $scope.itemSet.items.length; i++) { 
+            if ($scope.itemSet.items[i].stats.FlatHPRegenMod) {
+                $scope.itemSet.stats.hpRegen += $scope.itemSet.items[i].stats.FlatHPRegenMod; 
+            }
+            if ($scope.itemSet.items[i].stats.FlatMPPoolMod) {
+                $scope.itemSet.stats.mana += $scope.itemSet.items[i].stats.FlatMPPoolMod; 
+            }
+            if ($scope.itemSet.items[i].stats.FlatPhysicalDamageMod) {
+                $scope.itemSet.stats.ad += $scope.itemSet.items[i].stats.FlatPhysicalDamageMod; 
+            }
+            if ($scope.itemSet.items[i].stats.FlatArmorMod) {
+                $scope.itemSet.stats.armor += $scope.itemSet.items[i].stats.FlatArmorMod; 
+            }
+            if ($scope.itemSet.items[i].stats.FlatMagicResistMod) {
+                $scope.itemSet.stats.mr += $scope.itemSet.items[i].stats.FlatSpellBlockMod; 
+            }
+            if ($scope.itemSet.items[i].stats.FlatHPPoolMod) {
+                $scope.itemSet.stats.hp += $scope.itemSet.items[i].stats.FlatHPPoolMod; 
+            }
+            if ($scope.itemSet.items[i].stats.FlatCritChanceMod) {
+                $scope.itemSet.stats.crit += $scope.itemSet.items[i].stats.FlatCritChanceMod; 
+            }
+            if ($scope.itemSet.items[i].stats.FlatMagicDamageMod) {
+                $scope.itemSet.stats.ap += $scope.itemSet.items[i].stats.FlatMagicDamageMod; 
+            }
+            if ($scope.itemSet.items[i].stats.FlatMovementSpeedMod) {
+                $scope.itemSet.stats.movespeed += $scope.itemSet.items[i].stats.FlatMovementSpeedMod; 
+            }
+            if ($scope.itemSet.items[i].stats.PercentLifeStealMod) {
+                $scope.itemSet.stats.ls += $scope.itemSet.items[i].stats.PercentLifeStealMod; 
+            }
+            if ($scope.itemSet.items[i].stats.PercentMovementSpeedMod) {
+                $scope.movespeedPer += $scope.itemSet.items[i].stats.PercentMovementSpeedMod; 
+            }
+            if ($scope.itemSet.items[i].stats.PercentAttackSpeedMod) {
+                $scope.asPer += $scope.itemSet.items[i].stats.PercentAttackSpeedMod; 
+            }
         }
+
+        $scope.itemSet.stats.movespeed = (1 + $scope.movespeedPer) * $scope.itemSet.stats.movespeed;
+        $scope.itemSet.stats.as = (1 + $scope.asPer) * $scope.itemSet.stats.as;
     }
 
     $scope.saveItemSet = function () {

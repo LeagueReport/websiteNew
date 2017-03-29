@@ -48,12 +48,7 @@
   </section>
   
   <h1 style="overflow: auto"> {{ $res }} </h1>
-
-  <!-- About Section -->
-  <section class="about" id="about">
-    <h2 class="hidden">About</h2>
-  </section>
-</div>
+  
   <!-- Copyrights Section -->
   <div class="copyright">&copy;2017 - <strong>LEAGUE REPORT</strong></div>
 <!-- Main Container Ends -->

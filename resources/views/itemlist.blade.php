@@ -4,7 +4,7 @@
   	</form>
 
 	<div data-ng-repeat="(key,value) in items.data.data" data-ng-show="(value.name.toLowerCase().indexOf(itemSearch.toLowerCase()) > -1) || itemSearch.length == undefined"> 
-		<img src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[value.id]}.png">
+		<img src="http://ddragon.leagueoflegends.com/cdn/7.6.1/img/item/{[value.id]}.png">
 		<a data-ng-click="updateCurrentItem(value.id)">
 			{[ value.name ]} 
 		</a>

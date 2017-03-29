@@ -5,7 +5,6 @@
 	<div data-ng-repeat="item in itemSet.items"> 
 		{[ item.name ]} <br> 
 		<button data-ng-click="removeItem(item)"> Remove </button>
-<<<<<<< HEAD
 	</div> <br>
 
 	<strong style="text-decoration: underline"> Cumulative Stats </strong> 
@@ -30,19 +29,16 @@
 	<p> {[ itemSet.stats.mr ]} </p>
 	<h5> Move Speed </h5>
 	<p> {[ itemSet.stats.movespeed ]} </p>
+	<h5> Ability Power </h5>
+	<p> {[ itemSet.stats.ap ]} </p>
+	<h5> Critical Chance </h5>
+	<p> {[ itemSet.stats.crit ]} </p>
+	<h5> Life Steal </h5>
+	<p> {[ itemSet.stats.ls ]} </p>
 
 	<select data-ng-model="itemSetLevel" data-ng-options="x for x in levels" data-ng-change="updateItemSetStats()">
 	</select>
-=======
 	</div>
-	//$0 = "champion";
-	//$1 = "test1";
-	//$2 = "test2";
-	//$3 = "test3";
-	//$4 = "test4";
-	//$5 = "test5";
-	//$6 = "test6";
->>>>>>> 2d51f2e6a48d57e9235bf7d5650f88c199e7667c
 
 	
 	<button data-ng-click="saveItemSet($0, $1, $2, $3, $4, $5, $6)"> Save Item Set </button>
