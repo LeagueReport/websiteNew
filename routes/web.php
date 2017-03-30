@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/item', 'ItemController@index');
+Route::get('/item', 'ItemController@index')->middleware('auth');
 
 Route::get('/items', 'ItemController@items');
 Route::get('/item/{id}', 'ItemController@item');
@@ -21,3 +21,7 @@ Route::get('/itemset/save/{item1}/{champion}/{item2}/{item3}/{item4}/{item5}/{it
 
 Route::get('/champions', 'ItemController@champions');
 Route::get('/champion/{id}', 'ItemController@champion');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@auth');

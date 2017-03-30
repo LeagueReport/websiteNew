@@ -34,4 +34,9 @@ class HomeController extends Controller
         */
     	return view('home', compact('res'));
     }
+
+    public function auth ()
+    {
+        return view('login');
+    }
 }
