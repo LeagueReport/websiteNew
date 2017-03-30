@@ -3,15 +3,29 @@ html, body {
 	width: 100%;
 }
 
+.container2 {
+	width: 100%;
+	height: auto;
+	background-color: #000000;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 #listColumn {
 	height: 100%;
+	color: white;
+}
+
+#listColumn > h3 {
+	text-align: center;
 }
 
 #list {
-	height: calc(50% - 30px);
+	height: 300px;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	width: 100%;
-	overflow: auto;
+	overflow: scroll;
 	background-color: aqua;
 }
