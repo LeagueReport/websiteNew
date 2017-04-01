@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
@@ -48,9 +49,16 @@ class ItemController extends Controller
 
     public function saveItemSet($champion, $item1, $item2, $item3, $item4, $item5, $item6)
     {
+        if (Auth::check()) {
+            $user = Auth::user();
+        }
+
+        $data = json_decode($user, true);
+
+        $userName = $data['name'];
     
         DB::table('ItemSet')->insert(
-                ['itemSetID' => "1",
+                ['userName' => $userName,
                  'championID' => $champion,
                   'item1ID' => $item1,
                    'item2ID' => $item2,
