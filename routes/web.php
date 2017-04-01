@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/getItemSet/{user}', 'HomeController@getItemSets');
 
 Route::get('/item', 'ItemController@index')->middleware('auth');
 

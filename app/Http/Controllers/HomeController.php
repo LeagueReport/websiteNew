@@ -39,4 +39,12 @@ class HomeController extends Controller
     {
         return view('login');
     }
+
+    public function getItemSets($user) {
+        $itemSetsJSON = DB::select('select * from ItemSet where userName = ?', [$user]);
+
+
+
+        return $itemSetsJSON;
+    }
 }
