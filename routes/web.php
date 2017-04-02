@@ -26,3 +26,5 @@ Route::get('/champion/{id}', 'ItemController@champion');
 Auth::routes();
 
 Route::get('/home', 'HomeController@auth');
+
+Route::get('/news', 'NewsController@display');
