@@ -3,9 +3,61 @@ var myApp = angular.module('myApp', [], function($interpolateProvider) {
         $interpolateProvider.endSymbol(']}');
     });
 
+myApp.controller('HomeController', function($scope, $http) {
+
+    // Variables
+    $scope.champion;
+    $scope.info; 
+    $scope.id;
+    $scope.sets = ''; 
+    $scope.games = 'hello';
+
+    // Functions
+    $scope.getUserInfo = function () {
+
+        $http({
+            method: 'GET',
+            url: '/userInfo/'+$scope.champion
+        }).then(function successCallback(response) {
+            $scope.info = response;
+            $scope.info = $scope.info.data;
+            var firstProp;
+            for(var key in $scope.info) {
+            if($scope.info.hasOwnProperty(key)) {
+                firstProp = $scope.info[key];
+            break;
+                }
+            }
+            $scope.info = firstProp;
+            $scope.id = $scope.info.id;
+            $scope.getUserInfoPart2();
+         }, function errorCallback(response) {
+            console.log("Why!");
+        });
+    }
+
+    $scope.getUserInfoPart2 = function () {
+        $http({
+            method: 'GET',
+            url: '/userSets/'+$scope.champion
+        }).then(function successCallback(response) {
+            $scope.sets = response;
+         }, function errorCallback(response) {
+            console.log("Something went wrong!");
+        });
+
+        $http({
+            method: 'GET',
+            url: '/userGames/'+$scope.id
+        }).then(function successCallback(response) {
+            $scope.games = response;
+         }, function errorCallback(response) {
+            console.log("This isn't good!");
+        });
+    }
+});
 
 myApp.controller('ItemController', function($scope, $http) {
-    
 
     // Variables 
     $scope.items;
@@ -261,7 +313,7 @@ myApp.controller('ItemController', function($scope, $http) {
         }
 
         if ($scope.itemSet.champion.json != '') {
-            champion = ($scope.itemSet.champion.json.id);
+            champion = ($scope.itemSet.champion.json.key);
         }
 
         $http({

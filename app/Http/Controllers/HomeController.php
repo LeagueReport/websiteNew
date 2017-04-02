@@ -10,41 +10,39 @@ class HomeController extends Controller
 {
     public function index () 
     {
-    	$name = request('name');
+        return view('home');
+    }
 
-    	if ($name == NULL) 
-    	{
-    		$res = '';
-    		return view('home', compact('res'));
-    	}
+    public function userInfo ($champion) {
+        $client = new Client();
+        $res = $client->request('GET', 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'. $champion .'?api_key=RGAPI-22d91634-8797-414b-b49b-1b6e836e2c01');
+        $res = $res->getBody();  
+        return response($res);
+    }
 
-		$client = new Client();
-		$res = $client->request('GET', 'https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/'. $name .'?api_key=RGAPI-22d91634-8797-414b-b49b-1b6e836e2c01');
+    public function userSets ($champion) {
+        $user = $champion;
+        $itemSetsJSON = DB::select('select * from ItemSet where userName = ?', [$champion]);
+        return $itemSetsJSON;
+    }
 
-        $res = $res->getBody();
+      /*$res = json_decode($res);
 
+        $id = $res[$champion];
+        $id = $id['id']; */
+        /*https://na.api.riotgames.com/api/lol/NA/v1.3/game/by-summoner/{summonerID}/recent?api_key=RGAPI-3a3ee533-86cd-4a16-b7ad-820384e4f594*/
 
-        /*
-        //BELOW IS FOR TESTING PURPOSES DO NOT REMOVE
-        //KPC 3/7
-        DB::table('ItemSet')->insert(
-                ['userID' => 2, 'itemSetID' => "1", 'championID' => "2", 'item1ID' => "3", 'item2ID' => "4", 'item3ID' => "5", 'item4ID' => "6", 'item5ID' => "7", 'item6ID' => "8"]
+         /*   */
 
-            );
-        */
-    	return view('home', compact('res'));
+    public function userGames ($id) {
+        $client = new Client();
+        $res = $client->request('GET', 'https://na.api.pvp.net/api/lol/NA/v1.3/game/by-summoner/'. $id .'/recent?api_key=RGAPI-22d91634-8797-414b-b49b-1b6e836e2c01');
+        $res = $res->getBody();   
+        return $res;  
     }
 
     public function auth ()
     {
         return view('login');
-    }
-
-    public function getItemSets($user) {
-        $itemSetsJSON = DB::select('select * from ItemSet where userName = ?', [$user]);
-
-
-
-        return $itemSetsJSON;
     }
 }

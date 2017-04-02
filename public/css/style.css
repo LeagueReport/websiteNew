@@ -29,3 +29,11 @@ html, body {
 	overflow: scroll;
 	background-color: aqua;
 }
+
+#setsColumn {
+
+}
+
+#setsColumn > p {
+
+}

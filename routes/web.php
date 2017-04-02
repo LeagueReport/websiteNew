@@ -12,7 +12,11 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/getItemSet/{user}', 'HomeController@getItemSets');
+Auth::routes();
+Route::get('/home', 'HomeController@auth');
+Route::get('/userInfo/{champion}', 'HomeController@userInfo');
+Route::get('/userSets/{champion}', 'HomeController@userSets');
+Route::get('/userGames/{id}','HomeController@userGames');
 
 Route::get('/item', 'ItemController@index')->middleware('auth');
 
@@ -22,9 +26,5 @@ Route::get('/itemset/save/{item1}/{champion}/{item2}/{item3}/{item4}/{item5}/{it
 
 Route::get('/champions', 'ItemController@champions');
 Route::get('/champion/{id}', 'ItemController@champion');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@auth');
 
 Route::get('/news', 'NewsController@display');
