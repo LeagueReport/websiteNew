@@ -19,6 +19,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <script src="http://use.edgefonts.net/source-sans-pro:n2:default.js" type="text/javascript"></script>
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
 
   <body>
@@ -37,6 +39,51 @@
   </header>
   <!--News Section -->
 <section class="news" id="news" style="background-image: url({{asset('images/wall1.jpg')}})">
+<!-- start sw-rss-feed code --> 
+<script type="text/javascript"> 
+<!-- 
+rssfeed_url = new Array(); 
+rssfeed_url[0]=" http://na.leagueoflegends.com/en/rss.xml";  
+rssfeed_frame_width="480"; 
+rssfeed_frame_height="300"; 
+rssfeed_scroll="off"; 
+rssfeed_scroll_step="6"; 
+rssfeed_scroll_bar="on"; 
+rssfeed_target="_blank"; 
+rssfeed_font_size="12"; 
+rssfeed_font_face=""; 
+rssfeed_border="on"; 
+rssfeed_css_url="http://feed.surfing-waves.com/css/style3a.css"; 
+rssfeed_title="on"; 
+rssfeed_title_name="League of Legends Official News"; 
+rssfeed_title_bgcolor="#3366ff"; 
+rssfeed_title_color="#fff"; 
+rssfeed_title_bgimage="http://"; 
+rssfeed_footer="off"; 
+rssfeed_footer_name="rss feed"; 
+rssfeed_footer_bgcolor="#fff"; 
+rssfeed_footer_color="#333"; 
+rssfeed_footer_bgimage="http://"; 
+rssfeed_item_title_length="50"; 
+rssfeed_item_title_color="#666"; 
+rssfeed_item_bgcolor="#fff"; 
+rssfeed_item_bgimage="http://"; 
+rssfeed_item_border_bottom="on"; 
+rssfeed_item_source_icon="off"; 
+rssfeed_item_date="off"; 
+rssfeed_item_description="on"; 
+rssfeed_item_description_length="120"; 
+rssfeed_item_description_color="#666"; 
+rssfeed_item_description_link_color="#333"; 
+rssfeed_item_description_tag="off"; 
+rssfeed_no_items="0"; 
+rssfeed_cache = "94b8a8dc6cc4dc1dca2ddf32028846be"; 
+//--> 
+</script> 
+<script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script> 
+<!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
+<div style="text-align:right; width:480px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">surfing-waves.com</a></div> 
+<!-- end sw-rss-feed code -->
  <form action="http://na.leagueoflegends.com/en/news/">
     <input type="image" style="height:300px;width: 500px"  src="http://stepbystepguides.org/wp-content/uploads/2017/02/League-of-legends.jpg"/>
 </form>
@@ -60,7 +107,6 @@ function go_get(){
  return false;
 }
 </script> 
-
 <form onsubmit="go_get(); return false;" >
  <input type="text"  id="yourtextfield"/>
  <input type="submit" value="YouTube Search" />
