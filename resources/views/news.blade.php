@@ -1,4 +1,4 @@
-<!doctype html>
+<<!doctype html>
 <html>
   <head>
   <meta charset="UTF-8">
@@ -39,13 +39,21 @@
   </header>
   <!--News Section -->
 <section class="news" id="news" style="background-image: url({{asset('images/wall1.jpg')}})">
+<div style="float: right;">
+<form onsubmit="go_get(); return false;" >
+ <input type="text"  id="yourtextfield"/>
+ <input type="submit" value="YouTube Search" />
+</form>
+
+<iframe id="youriframe" width="1000" height="600" allowfullscreen="true" src="http://www.youtube.com/embed?listType=search&list=leagueoflegendsnews"></iframe>  
+</div> 
 <!-- start sw-rss-feed code --> 
 <script type="text/javascript"> 
 <!-- 
 rssfeed_url = new Array(); 
-rssfeed_url[0]=" http://na.leagueoflegends.com/en/rss.xml";  
-rssfeed_frame_width="480"; 
-rssfeed_frame_height="300"; 
+rssfeed_url[0]="http://na.leagueoflegends.com/en/rss.xml";  
+rssfeed_frame_width="600"; 
+rssfeed_frame_height="420"; 
 rssfeed_scroll="off"; 
 rssfeed_scroll_step="6"; 
 rssfeed_scroll_bar="on"; 
@@ -53,10 +61,10 @@ rssfeed_target="_blank";
 rssfeed_font_size="12"; 
 rssfeed_font_face=""; 
 rssfeed_border="on"; 
-rssfeed_css_url="http://feed.surfing-waves.com/css/style3a.css"; 
+rssfeed_css_url="http://feed.surfing-waves.com/css/style6.css"; 
 rssfeed_title="on"; 
-rssfeed_title_name="League of Legends Official News"; 
-rssfeed_title_bgcolor="#3366ff"; 
+rssfeed_title_name="League Of Legends Official News"; 
+rssfeed_title_bgcolor="#ff0000"; 
 rssfeed_title_color="#fff"; 
 rssfeed_title_bgimage="http://"; 
 rssfeed_footer="off"; 
@@ -77,24 +85,24 @@ rssfeed_item_description_color="#666";
 rssfeed_item_description_link_color="#333"; 
 rssfeed_item_description_tag="off"; 
 rssfeed_no_items="0"; 
-rssfeed_cache = "94b8a8dc6cc4dc1dca2ddf32028846be"; 
+rssfeed_cache = "ceb30d669b8bad85720dc26d4fea70f1"; 
 //--> 
 </script> 
 <script type="text/javascript" src="http://feed.surfing-waves.com/js/rss-feed.js"></script> 
 <!-- The link below helps keep this service FREE, and helps other people find the SW widget. Please be cool and keep it! Thanks. --> 
-<div style="text-align:right; width:480px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">surfing-waves.com</a></div> 
+<div style="text-align:right; width:600px;"><a href="http://www.surfing-waves.com/feed.htm" target="_blank" style="color:#ccc;font-size:10px">widget @</a> <a href="http://www.surfing-waves.com" target="_blank" style="color:#ccc;font-size:10px">surfing-waves.com</a></div> 
 <!-- end sw-rss-feed code -->
  <form action="http://na.leagueoflegends.com/en/news/">
-    <input type="image" style="height:300px;width: 500px"  src="http://stepbystepguides.org/wp-content/uploads/2017/02/League-of-legends.jpg"/>
+    <input type="image" style="height:75px;width: 150px"  src="http://stepbystepguides.org/wp-content/uploads/2017/02/League-of-legends.jpg"/>
 </form>
 <form action="http://www.riftherald.com/">
-    <input type="image" style="height:300px;width: 500px" src="https://cdn1.vox-cdn.com/uploads/blog/sbnu_logo/639/RiftHerald_Full-1.70.png"/>
+    <input type="image" style="height:75px;width: 150px" src="https://cdn1.vox-cdn.com/uploads/blog/sbnu_logo/639/RiftHerald_Full-1.70.png"/>
 </form>
 <form action="http://www.surrenderat20.net/">
-    <input type="image" style="height:300px;width: 500px" src="http://i.imgur.com/sKhmRnd.jpg"/>
+    <input type="image" style="height:75px;width: 150px" src="http://i.imgur.com/sKhmRnd.jpg"/>
 </form>
 <form action="https://www.reddit.com/r/leagueoflegends/">
-    <input type="image" style="height:300px;width: 500px" src="http://marketingland.com/wp-content/ml-loads/2014/07/reddit2-1920.jpg" />
+    <input type="image" style="height:75px;width: 150px" src="http://marketingland.com/wp-content/ml-loads/2014/07/reddit2-1920.jpg" />
 </form>
 <script type="text/javascript">
 
@@ -107,12 +115,6 @@ function go_get(){
  return false;
 }
 </script> 
-<form onsubmit="go_get(); return false;" >
- <input type="text"  id="yourtextfield"/>
- <input type="submit" value="YouTube Search" />
-</form>
-
-<iframe id="youriframe" width="1280" height="720" allowfullscreen="true" src="http://www.youtube.com/embed?listType=search&list=leagueoflegendsnews"></iframe>   
 </section>
  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
  <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady">   </script>
