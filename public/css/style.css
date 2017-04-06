@@ -30,14 +30,6 @@ html, body {
 	background-color: aqua;
 }
 
-#setsColumn {
-
-}
-
-#setsColumn > p {
-
-}
-
 #kda > p {
 	display: inline;
 }
@@ -45,17 +37,23 @@ html, body {
 .gameMatch {
     padding: 5px;
     margin: 10px;
+    width: 100%;
 }
 
 .gameMatchImages {
-
-	display: block;
+	margin-top: 5px;
+	display: inline-block;
+	height: auto;
 } 
 
-#gameChamp {
-
-	height: 125px;
+.gameMatchImages > img {
+	height: 50px;
 	width: auto;
+}
+
+#gameChamp {
+	height: auto;
+	width: 100%;
 }
 
 

@@ -7,7 +7,7 @@ myApp.controller('HomeController', function($scope, $http) {
 
     // Variables
     $scope.champion;
-    $scope.info; 
+    $scope.info = { profileIconId: '1'}; 
     $scope.id;
     $scope.sets = ''; 
     $scope.games = '';

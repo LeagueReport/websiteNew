@@ -11,6 +11,7 @@
         <li><a href="/">HOME</a></li>
         <li><a href="/item">ITEM SET BUILD</a></li>
         <li><a href="/news">NEWS</a></li>
+        <li><a href="/login">LOGIN</a></li>
       </ul>
     </nav>
   </header>
