@@ -10,24 +10,45 @@ html, body {
 	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
+	color: white;
+	padding-top: 50px;
 }
 
 #listColumn {
 	height: 100%;
 	color: white;
+	padding-top: 50px;
 }
 
 #listColumn > h3 {
 	text-align: center;
+	color: white;
 }
 
-#list {
+#ilist {
 	height: 300px;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	width: 100%;
 	overflow: scroll;
-	background-color: aqua;
+	background-color: #52bad5;
+}
+
+#clist {
+	height: 300px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	width: 100%;
+	overflow: scroll;
+	background-color: #52bad5;
+}
+
+#setsColumn {
+
+}
+
+#setsColumn > p {
+
 }
 
 #kda > p {
@@ -37,23 +58,15 @@ html, body {
 .gameMatch {
     padding: 5px;
     margin: 10px;
-    width: 100%;
 }
 
 .gameMatchImages {
-	margin-top: 5px;
-	display: inline-block;
-	height: auto;
+
+	display: block;
 } 
 
-.gameMatchImages > img {
-	height: 50px;
+#gameChamp {
+
+	height: 125px;
 	width: auto;
 }
-
-#gameChamp {
-	height: auto;
-	width: 100%;
-}
-
-
