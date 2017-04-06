@@ -16,6 +16,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@auth');
 Route::get('/userInfo/{champion}', 'HomeController@userInfo');
 Route::get('/userSets/{champion}', 'HomeController@userSets');
+Route::get('/userchampIcon/{championId}', 'HomeController@getChampId');
+
 Route::get('/userGames/{id}','HomeController@userGames');
 
 Route::get('/item', 'ItemController@index')->middleware('auth');

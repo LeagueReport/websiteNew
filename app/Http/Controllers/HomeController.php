@@ -26,6 +26,13 @@ class HomeController extends Controller
         return $itemSetsJSON;
     }
 
+    public function getChampId($championId) {
+        $client = new Client();
+        $res = $client->request('GET', 'https://global.api.riotgames.com/api/lol/static-data/NA/v1.2/champion/'. $championId .'?api_key=RGAPI-22d91634-8797-414b-b49b-1b6e836e2c01');
+        $res = $res->getBody();  
+        return response($res);
+    }
+
       /*$res = json_decode($res);
 
         $id = $res[$champion];

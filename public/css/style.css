@@ -37,3 +37,25 @@ html, body {
 #setsColumn > p {
 
 }
+
+#kda > p {
+	display: inline;
+}
+
+.gameMatch {
+    padding: 5px;
+    margin: 10px;
+}
+
+.gameMatchImages {
+
+	display: block;
+} 
+
+#gameChamp {
+
+	height: 125px;
+	width: auto;
+}
+
+

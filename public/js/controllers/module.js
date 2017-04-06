@@ -10,7 +10,7 @@ myApp.controller('HomeController', function($scope, $http) {
     $scope.info; 
     $scope.id;
     $scope.sets = ''; 
-    $scope.games = 'hello';
+    $scope.games = '';
 
     // Functions
     $scope.getUserInfo = function () {
@@ -51,8 +51,33 @@ myApp.controller('HomeController', function($scope, $http) {
             url: '/userGames/'+$scope.id
         }).then(function successCallback(response) {
             $scope.games = response;
+            $scope.games = $scope.games.data.games;
+            $scope.getUserInfoPart3();
          }, function errorCallback(response) {
             console.log("This isn't good!");
+        });
+    }
+
+    $scope.getUserInfoPart3 = function () {
+        angular.forEach($scope.games, function(value, key) {
+        value.stats.cs = 0;
+        if (value.stats.minionsKilled != null) {
+            value.stats.cs += value.stats.minionsKilled;
+        } 
+        if (value.stats.neutralMinionsKilledYourJungle != null) {
+            value.stats.cs += value.stats.neutralMinionsKilledYourJungle;
+        } 
+        if (value.stats.neutralMinionsKilledEnemyJungle != null) {
+            value.stats.cs += value.stats.neutralMinionsKilledEnemyJungle;
+        } 
+        $http({
+            method: 'GET',
+            url: '/userchampIcon/'+ value.championId
+        }).then(function successCallback(response) {
+            value.championId = response.data.key;
+        }, function errorCallback(response) {
+            console.log("Something went wrong!");
+        });
         });
     }
 });

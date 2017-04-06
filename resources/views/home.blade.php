@@ -14,6 +14,8 @@
 
 	<link rel="stylesheet" type="text/css" href="{{asset('css/SummonerSearch.css')}}"/>   
 
+  <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"/> 
+
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -67,7 +69,92 @@
   </div>
 
   <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-    {[ games ]}
+    <div class="gameMatch" style="background-color: #e2b6b3" data-ng-repeat="game in games | limitTo:4:4" data-ng-show="!game.stats.win">
+
+      <div class="gameMatchImages">
+      <img id ="gameChamp" src="http://ddragon.leagueoflegends.com/cdn/7.6.1/img/champion/{[game.championId]}.png"> 
+      <img data-ng-show="game.stats.item0" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item0]}.png"> 
+      <img data-ng-show="game.stats.item1" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item1]}.png">
+      <img data-ng-show="game.stats.item2" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item2]}.png">
+      <img data-ng-show="game.stats.item3" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item3]}.png">
+      <img data-ng-show="game.stats.item4" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item4]}.png">
+      <img data-ng-show="game.stats.item5" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item5]}.png">
+      <img data-ng-show="game.stats.item6" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item6]}.png">
+      </div>
+
+      <h5> <strong> {[ game.subType ]} <strong> </h5>
+      
+      <p style="color: green" data-ng-show="game.stats.win"> Game Won <p>
+      <p style="color: red" data-ng-show="!game.stats.win"> Game Lost <p>
+
+      <p id="kda"> Kill/Death/Assist: 
+      <span data-ng-show="game.stats.championsKilled">
+      {[ game.stats.championsKilled ]}
+      </span>
+      <span data-ng-show="!game.stats.championsKilled">
+      0
+      </span>/
+      <span data-ng-show="game.stats.numDeaths">
+      {[ game.stats.numDeaths ]}
+      </span>
+      <span data-ng-show="!game.stats.numDeaths">
+      0
+      </span>/
+      <span data-ng-show="game.stats.assists">
+      {[ game.stats.assists ]}
+      </span>
+      <span data-ng-show="!game.stats.assists">
+      0
+      </span>
+      </p>
+
+      Minions Killed: 
+      <span data-ng-show="game.stats.cs"> {[ game.stats.cs ]} </span> 
+      <span data-ng-show="!game.stats.cs"> 0 </span>
+    </div>
+    <div class="gameMatch" style="background-color: #66ff66" data-ng-repeat="game in games | limitTo:4:4" data-ng-show="game.stats.win">
+
+      <div class="gameMatchImages">
+      <img id ="gameChamp" src="http://ddragon.leagueoflegends.com/cdn/7.6.1/img/champion/{[game.championId]}.png"> 
+      <img data-ng-show="game.stats.item0" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item0]}.png"> 
+      <img data-ng-show="game.stats.item1" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item1]}.png">
+      <img data-ng-show="game.stats.item2" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item2]}.png">
+      <img data-ng-show="game.stats.item3" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item3]}.png">
+      <img data-ng-show="game.stats.item4" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item4]}.png">
+      <img data-ng-show="game.stats.item5" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item5]}.png">
+      <img data-ng-show="game.stats.item6" src="http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/{[game.stats.item6]}.png">
+      </div>
+
+      <h5> <strong> {[ game.subType ]} <strong> </h5>
+      
+      <p style="color: green" data-ng-show="game.stats.win"> Game Won <p>
+      <p style="color: red" data-ng-show="!game.stats.win"> Game Lost <p>
+
+      <p id="kda"> Kill/Death/Assist: 
+      <span data-ng-show="game.stats.championsKilled">
+      {[ game.stats.championsKilled ]}
+      </span>
+      <span data-ng-show="!game.stats.championsKilled">
+      0
+      </span>/
+      <span data-ng-show="game.stats.numDeaths">
+      {[ game.stats.numDeaths ]}
+      </span>
+      <span data-ng-show="!game.stats.numDeaths">
+      0
+      </span>/
+      <span data-ng-show="game.stats.assists">
+      {[ game.stats.assists ]}
+      </span>
+      <span data-ng-show="!game.stats.assists">
+      0
+      </span>
+      </p>
+
+      Minions Killed: 
+      <span data-ng-show="game.stats.cs"> {[ game.stats.cs ]} </span> 
+      <span data-ng-show="!game.stats.cs"> 0 </span>
+    </div>
   </div>
   
   <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
