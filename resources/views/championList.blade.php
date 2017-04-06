@@ -1,6 +1,6 @@
 <div id="clist" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
 	<form name="search">
-    	<input type="text" name="input" data-ng-model="championSearch" required data-ng-trim="false" autocomplete="off">
+    	<input type="text" name="input" data-ng-model="championSearch" required data-ng-trim="false" autocomplete="off" placeholder="Search Champions">
   	</form>
 
 	<div data-ng-repeat="(key,value) in champions.data" data-ng-show="(value.name.toLowerCase().indexOf(championSearch.toLowerCase()) > -1) || championSearch.length == undefined"> 

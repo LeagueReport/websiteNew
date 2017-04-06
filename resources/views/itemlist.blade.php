@@ -1,6 +1,6 @@
-<div id="ilist" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+<div id="clist" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
 	<form name="search">
-    	<input type="text" name="input" data-ng-model="itemSearch" required data-ng-trim="false" autocomplete="off">
+    	<input type="text" name="input" data-ng-model="itemSearch" required data-ng-trim="false" autocomplete="off" placeholder="Search Items">
   	</form>
 
 	<div data-ng-repeat="(key,value) in items.data.data" data-ng-show="(value.name.toLowerCase().indexOf(itemSearch.toLowerCase()) > -1) || itemSearch.length == undefined"> 

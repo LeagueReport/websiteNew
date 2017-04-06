@@ -26,7 +26,7 @@
 		@include('currentItem')
 		@include('currentChampion')
 	</div>
-	<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+	<div id="listColumn" style="height: auto" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
 		@include('itemSet')
 	</div>
 	<!-- Copyrights Section -->

@@ -6,7 +6,7 @@ html, body {
 .container2 {
 	width: 100%;
 	height: auto;
-	background-color: #000000;
+	background-color: #b1e0ec;
 	display: inline-block;
 	margin-left: auto;
 	margin-right: auto;
@@ -22,16 +22,7 @@ html, body {
 
 #listColumn > h3 {
 	text-align: center;
-	color: white;
-}
-
-#ilist {
-	height: 300px;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	width: 100%;
-	overflow: scroll;
-	background-color: #52bad5;
+	color: black;
 }
 
 #clist {
@@ -40,7 +31,47 @@ html, body {
 	margin-bottom: 15px;
 	width: 100%;
 	overflow: scroll;
-	background-color: #52bad5;
+	background-color: #81cde0;
+	box-shadow: 2px 2px 3px #888888;
+}
+
+#clist > form {
+
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#clist > form > input {
+
+	width: 100%;
+	color: black;
+}
+
+#clist > form > input:focus {
+	color: black;
+}
+
+#clist > div {
+
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-bottom-style: solid;
+	border-width: 1px;
+	border-bottom-color: #32adcd;
+}
+
+#clist > div > img {
+
+	height: 75px;
+	width: auto;
+	border-radius: 10px;
+}
+
+#clist > div > a {
+
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
 }
 
 #setsColumn {
@@ -69,4 +100,23 @@ html, body {
 
 	height: 125px;
 	width: auto;
+}
+
+#currentItem {
+
+	color: black;
+	font-size: 18px;
+}
+
+#currentItem > img {
+	text-align: center;
+	border-radius: 10px;
+}
+
+#currentItem > button {
+	margin-top: 10px;
+}
+
+#currentItem > h5 {
+	font-size: 18px;
 }

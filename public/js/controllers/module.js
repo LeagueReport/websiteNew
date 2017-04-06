@@ -113,6 +113,7 @@ myApp.controller('ItemController', function($scope, $http) {
     $scope.levels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
     $scope.isItem = false; 
+    $scope.isChampion = false;
 
     $scope.itemSet = {
     	champion : {
@@ -154,6 +155,7 @@ myApp.controller('ItemController', function($scope, $http) {
 
     $scope.updateCurrentItem = function (id) {
     	$scope.isItem = true;
+        $scope.isChampion = false;
     	$http({
   			method: 'GET',
   			url: '/item/'+id
@@ -193,6 +195,7 @@ myApp.controller('ItemController', function($scope, $http) {
 
     $scope.updateCurrentChampion = function (id) {
     	$scope.isItem = false;
+        $scope.isChampion = true;
     	$scope.level = 1;
     	$http({
   			method: 'GET',

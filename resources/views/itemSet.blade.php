@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+<div id="currentItem" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
 
 	<strong> Champion </strong> {[ itemSet.champion.json.name ]} <br>
 	<strong> Items </strong>
@@ -11,40 +11,36 @@
 
 	<strong style="text-decoration: underline"> Cumulative Stats </strong> 
 
-	<h5> Attack Damage </h5>
+	<h5> Attack Damage: </h5>
 	<p> {[ itemSet.stats.ad ]} </p>
-	<h5> Attack Speed </h5>
+	<h5> Attack Speed: </h5>
 	<p> {[ itemSet.stats.as ]} </p>
-	<h5> Melee/Range </h5>
+	<h5> Melee/Range: </h5>
 	<p> {[ itemSet.stats.range ]} </p>
-	<h5> Health Points </h5>
+	<h5> Health Points: </h5>
 	<p> {[ itemSet.stats.hp ]}
-	<h5> Health Point Regeneration </h5>
+	<h5> Health Point Regeneration: </h5>
 	<p> {[ itemSet.stats.hpRegen ]} </p>
-	<h5> Mana/Energy </h5>
+	<h5> Mana/Energy: </h5>
 	<p> {[ itemSet.stats.mana ]} </p>
-	<h5> Mana Regeneration </h5>
+	<h5> Mana Regeneration: </h5>
 	<p> {[ itemSet.stats.manaRegen ]} </p>
-	<h5> Armor </h5>
+	<h5> Armor: </h5>
 	<p> {[ itemSet.stats.armor ]} </p>
-	<h5> Magic Resist </h5>
+	<h5> Magic Resist: </h5>
 	<p> {[ itemSet.stats.mr ]} </p>
-	<h5> Move Speed </h5>
+	<h5> Move Speed: </h5>
 	<p> {[ itemSet.stats.movespeed ]} </p>
-	<h5> Ability Power </h5>
+	<h5> Ability Power: </h5>
 	<p> {[ itemSet.stats.ap ]} </p>
-	<h5> Critical Chance </h5>
+	<h5> Critical Chance: </h5>
 	<p> {[ itemSet.stats.crit ]} </p>
-	<h5> Life Steal </h5>
+	<h5> Life Steal: </h5>
 	<p> {[ itemSet.stats.ls ]} </p>
 
-	<select data-ng-model="itemSetLevel" data-ng-options="x for x in levels" data-ng-change="updateItemSetStats()">
+	<span> Level </span> <select data-ng-model="itemSetLevel" data-ng-options="x for x in levels" data-ng-change="updateItemSetStats()">
 	</select>
-	</div>
-
-
 	<button data-ng-click="saveItemSet()"> Save Item Set</button>
+	</div>
 	
-
-
 </div>
