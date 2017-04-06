@@ -89,12 +89,19 @@ html, body {
 .gameMatch {
     padding: 5px;
     margin: 10px;
+    width: 100%;
 }
 
 .gameMatchImages {
+ 	margin-top: 5px;
+ 	display: inline-block;
+ 	height: auto;
+ } 
 
-	display: block;
-} 
+ .gameMatchImages > img {
+ 	height: 50px;
+ 	width: auto;
+ }
 
 #gameChamp {
 
