@@ -1,4 +1,4 @@
-<div id="list" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+<div id="ilist" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
 	<form name="search">
     	<input type="text" name="input" data-ng-model="itemSearch" required data-ng-trim="false" autocomplete="off">
   	</form>
