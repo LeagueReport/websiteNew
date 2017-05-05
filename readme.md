@@ -15,14 +15,14 @@ Accessing our website.
 	We own the domain www.LeagueReport.pro
 	This redirects to the server lcs-vc-gwkingsl.syr.edu
 	In order to start up the server:
-	- open terminal
-	- run the command "ssh gwkingsl@lcs-vc-gwkingsl.syr.edu"
-	- when prompted for the password, it is "leaguereport"
-	- run the command "cd websiteNewNew"
-	- run the command "php artisan serve --port=8000 --host=lcs-vc-gwkingsl.syr.edu"
-	- open a browser on a second computer
-	- go to the url www.leaguereport.pro
-	- have fun
+ - open terminal
+ - run the command "ssh gwkingsl@lcs-vc-gwkingsl.syr.edu"
+ - when prompted for the password, it is "leaguereport"
+ - run the command "cd websiteNewNew"
+ - run the command "php artisan serve --port=8000 --host=lcs-vc-gwkingsl.syr.edu"
+ - open a browser on a second computer
+ - go to the url www.leaguereport.pro
+ - have fun
 
 	If there are any issues, email the following:
 		gwkingsl@syr.edu jmstryer@syr.edu kpcamach@syr.edu sjbacon@syr.edu
