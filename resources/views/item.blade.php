@@ -1,3 +1,6 @@
+<!-- HTML section that contains the core of our Item Set Build page -->
+
+<!-- Include itemhead.blade.php -->
 @include('itemhead')
 
 <div class="container2"> 
@@ -18,15 +21,20 @@
 </div>
 	<div id="listColumn" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
 		<h3> Champion Search </h3>
+		<!-- Includes championList.blade.php -->
 		@include('championList')
 		<h3> Item Search </h3>
+		<!-- Includes itemList.blade.php -->
 		@include('itemlist')
 	</div>
 	<div id ="listColumn" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+		<!-- Includes currentItem.blade.php -->
 		@include('currentItem')
+		<!-- Includes currentChampion --> 
 		@include('currentChampion')
 	</div>
 	<div id="listColumn" style="height: auto" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
+		<!-- Includes itemSet.blade.php -->
 		@include('itemSet')
 	</div>
 	<!-- Copyrights Section -->

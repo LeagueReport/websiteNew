@@ -7,13 +7,18 @@ use GuzzleHttp\Client;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
+/* Controller for Item Set Build Page */
+
 class ItemController extends Controller
 {
+
+    /* Returns view item.blade.php */
     public function index () 
     {	
     	return view('item');
     }
 
+    /* Returns a JSON of all the items in Leaguge of Legends */
     public function items () 
     {
         $client = new Client();
@@ -22,6 +27,7 @@ class ItemController extends Controller
         return response($res);
     }
 
+    /* Returns a JSON containing information of one specific item in League of Legends */
     public function item ($id) 
     {
     	$client = new Client();
@@ -30,6 +36,7 @@ class ItemController extends Controller
         return response($res);
     }
 
+    /* Returns a JSON containing all of the champions in League of Legends */
     public function champions () 
     {
         $client = new Client();
@@ -38,6 +45,7 @@ class ItemController extends Controller
         return response($res);
     }
 
+    /* Returns a JSON containing information on one specific champion in League of Legends */
     public function champion ($id) 
     {
         $client = new Client();
@@ -46,7 +54,7 @@ class ItemController extends Controller
         return response($res);
     }
 
-
+    /* Function to save a user's item set to our database */
     public function saveItemSet($champion, $item1, $item2, $item3, $item4, $item5, $item6)
     {
         if (Auth::check()) {

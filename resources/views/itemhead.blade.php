@@ -1,3 +1,6 @@
+<!-- Top of our page for the Item Set Build Page -->
+<!-- Contains css and js imports -->
+
 <!DOCTYPE html>
 
 <html>
@@ -26,4 +29,6 @@
 
 </head>
 
+<!-- The tags in this body link our body to a specific AngularJS 
+controller -->
 <body data-ng-app="myApp" data-ng-controller="ItemController">

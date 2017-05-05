@@ -1,3 +1,6 @@
+<!-- This contains the HTML specifically for the Item Set
+part of the Item Set Build page -->
+
 <div id="currentItem" class="col-xs-12 col-sm-4 col-md-4 col-lg-4"> 
 
 	<strong> Champion </strong> {[ itemSet.champion.json.name ]} <br>
@@ -6,9 +9,11 @@
 
 
 		{[ item.name ]} <br> 
+	<!-- Removes an item from the item set -->
 		<button data-ng-click="removeItem(item)"> Remove </button>
 	</div> <br>
 
+	<!-- Displays cumulative stats -->
 	<strong style="text-decoration: underline"> Cumulative Stats </strong> 
 
 	<h5> Attack Damage: </h5>
@@ -38,8 +43,13 @@
 	<h5> Life Steal: </h5>
 	<p> {[ itemSet.stats.ls ]} </p>
 
-	<span> Level </span> <select data-ng-model="itemSetLevel" data-ng-options="x for x in levels" data-ng-change="updateItemSetStats()">
+	<span> Level </span> 
+	<!-- Dropdown to change the level and calls function to update calculations -->
+
+	<select data-ng-model="itemSetLevel" data-ng-options="x for x in levels" data-ng-change="updateItemSetStats()">
 	</select>
+
+	<!-- Button to save a user's item set -->
 	<button data-ng-click="saveItemSet()"> Save Item Set</button>
 	</div>
 	
