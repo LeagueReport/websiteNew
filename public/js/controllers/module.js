@@ -308,8 +308,18 @@ myApp.controller('ItemController', function($scope, $http) {
     }
 
     $scope.saveItemSet = function () {
-        
+        /*
+            This function is called when the save itemset button is called. The function goes through the currently stored
+            items and champions and passes them along to a route which in turn stores the information in the itemset table.
+        */
         var champion = "NA"
+
+
+
+        /*
+            Incase the itemset doesn't have 6 items, we initially define them as NA, and only fill
+            them in if the item does exist.
+        */
         var item1 = "NA";
         var item2 = "NA";
         var item3 = "NA";
@@ -344,6 +354,7 @@ myApp.controller('ItemController', function($scope, $http) {
             champion = ($scope.itemSet.champion.json.key);
         }
 
+        //this is where we go to our route that saves the itemset
         $http({
             method: 'GET',
             url: '/itemset/save/'+champion+'/'+item1+'/'+item2+'/'+item3+'/'+item4+'/'+item5+'/'+item6

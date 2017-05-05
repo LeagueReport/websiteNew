@@ -24,7 +24,11 @@ class HomeController extends Controller
         return response($res);
     }
 
-    /* Function queries our database for all the item sets associated with a user in our system and returns a JSON */
+    /*
+        Function queries our database for all the item sets associated with a user in our system and returns a JSON.
+        This function is called when an authenticated user searches for a summoner which they have saved itemsets for.
+        The function simply checks against the authenticated user and returns all rows that have that user in them.
+    */
     public function userSets ($champion) {
         $user = $champion;
         $itemSetsJSON = DB::select('select * from ItemSet where userName = ?', [$champion]);

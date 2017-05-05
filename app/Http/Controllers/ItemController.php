@@ -54,7 +54,11 @@ class ItemController extends Controller
         return response($res);
     }
 
-    /* Function to save a user's item set to our database */
+    /*
+        Function to save a user's item set to our database. This function utilizes a provided databasing library
+        that we use to store the items into a new row.  We store the name of the person currently authenticated
+        onto our website, and then the IDs of the champion and items that they are trying to store.
+    */
     public function saveItemSet($champion, $item1, $item2, $item3, $item4, $item5, $item6)
     {
         if (Auth::check()) {

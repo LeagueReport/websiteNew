@@ -4,6 +4,14 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+
+/*
+  This file creates the table we use for storing item sets. When LeagueReport is freshly installed in a new machine
+  a simple migrate command will create tables in the designated database (defined in the .env file) identical to the
+  table defined below. This can also be used to reset the tables if we want to quickly delete all the information
+  in the tables.
+*/
+
 class CreateItemsetTable extends Migration
 {
     /**
