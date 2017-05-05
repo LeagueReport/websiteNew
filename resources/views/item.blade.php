@@ -10,6 +10,7 @@
   <header>
   <h4 class="logo"><img src="{{asset('images/logo.png')}}" width="50" height="50" alt=""/> LEAGUE REPORT</h4>
     <nav>
+   	  <!-- Links to different pages on our website -->
       <ul>
         <li><a href="/">HOME</a></li>
         <li><a href="/item">ITEM SET BUILD</a></li>

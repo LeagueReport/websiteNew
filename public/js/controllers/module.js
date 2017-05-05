@@ -1,8 +1,14 @@
+// AngularJS file containing module and controllers for module 
+
+// myApp is a module we use across our website
+// It contains our AngularJS controllers for our website's various
+// pages.
 var myApp = angular.module('myApp', [], function($interpolateProvider) {
         $interpolateProvider.startSymbol('{[');
         $interpolateProvider.endSymbol(']}');
     });
 
+// Controller for Home Page
 myApp.controller('HomeController', function($scope, $http) {
 
     // Variables
@@ -13,6 +19,8 @@ myApp.controller('HomeController', function($scope, $http) {
     $scope.games = '';
 
     // Functions
+
+    // HTTP call to Laravel Controller function
     $scope.getUserInfo = function () {
 
         $http({
@@ -36,6 +44,7 @@ myApp.controller('HomeController', function($scope, $http) {
         });
     }
 
+    // HTTP call to Laravel Controller function
     $scope.getUserInfoPart2 = function () {
         $http({
             method: 'GET',
@@ -58,6 +67,7 @@ myApp.controller('HomeController', function($scope, $http) {
         });
     }
 
+    // HTTP call to Laravel Controller function
     $scope.getUserInfoPart3 = function () {
         angular.forEach($scope.games, function(value, key) {
         value.stats.cs = 0;
@@ -82,6 +92,7 @@ myApp.controller('HomeController', function($scope, $http) {
     }
 });
 
+// Controller for Item Set Build page
 myApp.controller('ItemController', function($scope, $http) {
 
     // Variables 
@@ -96,6 +107,7 @@ myApp.controller('ItemController', function($scope, $http) {
     $scope.championSearch = '';
     $scope.currentChampion = {
     	json : '',
+        // Below are stats on the current champion
     	ad : 0,
     	hp : 0,
     	hpRegen : 0,
@@ -121,6 +133,7 @@ myApp.controller('ItemController', function($scope, $http) {
         },
     	items : [],
     	stats : {
+            // Cumulative stats for all items in set
     		ad : 0,
     		hp : 0,
     		hpRegen : 0,
@@ -142,6 +155,8 @@ myApp.controller('ItemController', function($scope, $http) {
     }
 
     // Functions
+
+    // HTTP call to Laravel Controller function
     $scope.getItems = function () {
     	$http({
   			method: 'GET',
@@ -153,6 +168,7 @@ myApp.controller('ItemController', function($scope, $http) {
   		});
     }
 
+    // HTTP call to Laravel Controller function
     $scope.updateCurrentItem = function (id) {
     	$scope.isItem = true;
         $scope.isChampion = false;
@@ -166,6 +182,7 @@ myApp.controller('ItemController', function($scope, $http) {
   		});
     }
 
+    // Selects the current item and adds it to the Item Set
     $scope.selectItem = function () {
 
     	if ($scope.itemSet.items.length < 6) {
@@ -174,14 +191,17 @@ myApp.controller('ItemController', function($scope, $http) {
     	else {
     		alert("Maximum amount of items in set");
     	}
+
         $scope.updateItemSetStats();
     }
 
+    // Removes an item from the item set 
     $scope.removeItem = function(item) {
     	$scope.itemSet.items.splice($scope.itemSet.items.indexOf(item),1);
         $scope.updateItemSetStats();
     }
 
+    // HTTP call to Laravel Controller function
     $scope.getChampions = function () {
     	$http({
   			method: 'GET',
@@ -193,6 +213,7 @@ myApp.controller('ItemController', function($scope, $http) {
   		});
     }
 
+    // HTTP call to Laravel Controller function
     $scope.updateCurrentChampion = function (id) {
     	$scope.isItem = false;
         $scope.isChampion = true;
@@ -208,12 +229,14 @@ myApp.controller('ItemController', function($scope, $http) {
   		});
     }
 
+    // Selects current champion and adds it to Item Set Build
     $scope.selectChampion = function () {
 
     	$scope.itemSet.champion.json = $scope.currentChampion.json;
         $scope.updateItemSetStats();
     }
 
+    // Update stats by level shows one the stats of a champion at a certain level 
     $scope.updateStatsByLevel = function () {
 
 		$scope.currentChampion.ad = parseFloat($scope.currentChampion.json.stats.attackdamage) + (($scope.level - 1) * parseFloat($scope.currentChampion.json.stats.attackdamageperlevel));
@@ -228,6 +251,7 @@ myApp.controller('ItemController', function($scope, $http) {
         $scope.currentChampion.as = (.625 / (1 + parseFloat($scope.currentChampion.json.stats.attackspeedoffset))) * (1 + (($scope.level - 1) * parseFloat($scope.currentChampion.json.stats.attackspeedperlevel) / 100));
     }
 
+    // Update ItemSetStats updates the cumulative stats in the ItemSet
     $scope.updateItemSetStats = function () {
 
         if ($scope.itemSet.champion.json != '') {
