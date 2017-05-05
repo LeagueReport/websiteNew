@@ -12,8 +12,8 @@
 ## LeaugeReport's Contribution to ReadMe
 
 Accessing our website.
-	We own the domain www.LeagueReport.pro
-	This redirects to the server lcs-vc-gwkingsl.syr.edu
+	We own the domain www.leaguereport.pro.
+	This redirects to the server lcs-vc-gwkingsl.syr.edu.
 	In order to start up the server:
  - open terminal
  - run the command "ssh gwkingsl@lcs-vc-gwkingsl.syr.edu"
@@ -24,7 +24,7 @@ Accessing our website.
  - go to the url www.leaguereport.pro
  - have fun
 
-	If there are any issues, email the following:
+If there are any issues, email the following:
 		gwkingsl@syr.edu jmstryer@syr.edu kpcamach@syr.edu sjbacon@syr.edu
 
 How to access our website
