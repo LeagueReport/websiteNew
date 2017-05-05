@@ -7,6 +7,78 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+
+
+## LeaugeReport's Contribution to ReadMe
+
+Accessing our website.
+	We own the domain www.LeagueReport.pro
+	This redirects to the server lcs-vc-gwkingsl.syr.edu
+	In order to start up the server:
+	- open terminal
+	- run the command "ssh gwkingsl@lcs-vc-gwkingsl.syr.edu"
+	- when prompted for the password, it is "leaguereport"
+	- run the command "cd websiteNewNew"
+	- run the command "php artisan serve --port=8000 --host=lcs-vc-gwkingsl.syr.edu"
+	- open a browser on a second computer
+	- go to the url www.leaguereport.pro
+	- have fun
+
+	If there are any issues, email the following:
+		gwkingsl@syr.edu jmstryer@syr.edu kpcamach@syr.edu sjbacon@syr.edu
+
+How to access our website
+
+
+Files we edited / important to functionality
+
+ in /resources/views/layouts/
+ - championList.blade.php
+ - currentChampion.blade.php
+ - currentItem.blade.php
+ - home.blade.php
+ - item.blade.php
+ - itemhead.blade.php
+ - itemlist.blade.php
+ - itemSet.blade.php
+ - login.blade.php
+ - news.blade.php
+
+ in /routes/
+  - web.php
+
+ in /app/Http/Controllers/
+  - Controller.php
+  - HomeController.php
+  - ItemController.php
+  - NewsController.php
+
+ in /public/css/
+  - SummonerSearch.css
+  - style.css
+
+ in /public/js/controllers/
+  - module.js
+
+ in /database/migrations/
+  - 2014_10_12_000000_create_users_table.php
+  - 2017_03_07_212728_create_itemset_table.php
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
@@ -38,3 +110,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+
+
+
+
+
+
+
+
+
