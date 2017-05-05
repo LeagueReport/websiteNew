@@ -150,6 +150,9 @@ myApp.controller('ItemController', function($scope, $http) {
     	}
     }
 
+
+    //convenienve object when saving itemsets merely to make it easier to keep
+    //track of the IDs to be pushed onto the item set table
     $scope.itemSetIDs = {
         IDs : []
     }
